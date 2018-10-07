@@ -1,0 +1,58 @@
+<!doctype html>
+<html data-ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>interview_currFair</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+		<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+		<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    	<script src="landing.js"></script>
+	</head>
+
+	<body>
+  <div class="container" data-ng-controller="mainController">
+  	<div class="row">
+  			<canvas id="stackedChart" height="100"></canvas>
+  	</div>
+  	<div class="row">
+  		<h2>Transaction List</h2>
+  		<div id='table-container' style='height: 210px; overflow: auto;'>         
+  		<table class="table table-hover">
+    		<thead>
+      			<tr >
+        			<th>userId</th>
+        			<th>Curr From</th>
+        			<th>Curr To</th>
+        			<th>Amount sell</th>
+        			<th>Amount buy</th>
+        			<th>Rate</th>
+        			<th>Time</th>
+        			<th>Orig country</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+      			<tr data-ng-repeat="x in messages">
+        			<td>{{x.userId}}</td>
+        			<td>{{x.currencyFrom}}</td>
+        			<td>{{x.currencyTo}}</td>
+        			<td>{{x.amountSell}}</td>
+         			<td>{{x.amountBuy}}</td>
+        			<td>{{x.rate}}</td>
+        			<td>{{x.timePlaced}}</td>
+        			<td>{{x.originatingCountry}}</td>       			        			
+      			</tr>
+    		</tbody>
+  		</table>
+  		</div>
+  	</div>
+  </div>		
+					 
+	</body>
+</html>

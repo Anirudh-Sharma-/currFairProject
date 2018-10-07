@@ -1,0 +1,6 @@
+interview/Message/MessageService.class
+interview/Message/MessageRepository.class
+interview/Message/MessageController.class
+config/WebSocketConfig.class
+interview/InterviewAppStart.class
+interview/Message/Message.class
